@@ -1,0 +1,21 @@
+Descriptions:
+Purpose:	Remap 1-km GLC2000 onto 1-degree MPI-BGIv3 dataset
+Dataset:	GLC2000 - Global Product v1.1 (http://forobs.jrc.ec.europa.eu/products/glc2000/glc2000.php)
+Software:	GRASS GIS v6.4.3; NCAR NCL v6.3.0 
+Created by:	Cheng-En Yang
+Last update:	June 30, 2017
+
+Procedures:
+Part 1 (GRASS GIS):
+r.in.gdal ~/BGC-Biomass/Observation/BGI2014/1km/Tiff_biomass/biomass_total/biomass_total_Layer.tif output=Tbio
+r.in.gdal ~/BGC-Biomass/Observation/GLC2000/Tiff/glc2000_v1_1.tif output=landcover -o
+g.region rast=Tbio
+r.mapcalc maskmap=if(Tbio@totalbiomass >=0 && Tbio@totalbiomass <=22, 1, -999 )
+r.mapcalc GLC2000_BGI="landcover"
+r.out.gdal input=GLC2000_BGI output=~/BGC-Biomass/Observation/GLC2000/GLC2000_BGI.nc format=netCDF
+
+Remapped GLC2000-MPIBGI with uncertainty considered is processed using the same method.
+
+
+Part 2 (create 1-degree grid cell area):
+Use NCL to run the script "ncl step5-create_gridarea.ncl"

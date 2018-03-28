@@ -1,0 +1,16 @@
+Dataset:	MPI-BGI v3 (https://www.bgc-jena.mpg.de/geodb/projects/Data.php)
+Last update:	June 30, 2017
+
+Descriptions by:Cheng-En Yang
+
+1. NetCDF data is processed and converted to GeoTiff while maintaining 1-by-1 degree horizontal resolution.
+2. The tiff files are futher used for remapping 1-by-1 km (grid resolution) GLC2000 data product.
+3. The range (min/max) of MPI-BGI biomass data is computed by adding/substracting the uncertainty value.
+4. Biomass in wood is defined as the sum of the biomass in branches and that in stem.
+5. Files are named as 
+BGI_Tbio_1km.nc BGI_Tbio_un_1km.nc 
+BGI_Bbio_1km.nc BGI_Bbio_un_1km.nc 
+BGI_cLeaf_1km.nc BGI_cLeaf_un_1km.nc 
+BGI_cWood_1km.nc BGI_cWood_un_1km.nc
+
+Tbio = total; Bbio = roots; cLeaf = foilages; cWood = branches+stem; un = uncertainty
