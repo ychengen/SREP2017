@@ -12,8 +12,8 @@ Cheng-En Yang, Jiafu Mao, Forrest M. Hoffman, Daniel M. Ricciuto, Joshua S. Fu, 
 
 - <b>Contact information</b>  
 Cheng-En Yang (<a href="mailto:cyang10@vols.utk.edu">cyang10@vols.utk.edu</a>)  
-Department of Civil and Environmental Engineering,  
-The University of Tennessee at Knoxville,  
+Department of Civil and Environmental Engineering  
+The University of Tennessee at Knoxville  
 Knoxville, TN, 37996-2313, USA  
 
 - <b>Last update</b>: March 27, 2018  
